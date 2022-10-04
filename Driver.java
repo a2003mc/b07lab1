@@ -34,14 +34,5 @@ public class Driver {
         for (int i = 0; i < np.exponents.length; i++)
             System.out.print(np.exponents[i] + " ");
         System.out.println();
-
-
-
-       try {
-           p1.saveToFile("output.txt");
-       } catch (IOException ex1) {
-           // TODO;
-       }
-
     }
 }
