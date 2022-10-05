@@ -21,7 +21,7 @@ public class Polynomial {
     String line = scanner.nextLine();
     scanner.close();
     line = line.replace("-", "+-");
-    String[] term = line.split("\\+");
+    String[] terms = line.split("\\+");
     coefficient = new double[terms.length];
     exponent = new int[terms.length];
     for (int i = 0; i < terms.length; i++) {
@@ -39,17 +39,17 @@ public class Polynomial {
       line = line + this.coefficient[i] + "x" + this.exponent[i] + "+";
     }
     line = line.replace("+-", "-");
-    line = line.replace.replace("x0", "");
-    line = line.replace.replace(".0", "");
+    line = line.replace("x0", "");
+    line = line.replace(".0", "");
     writer.write(line);
     writer.close();
   }
 
   public Polynomial add(Polynomial other) {
 
-    if (this.exponents.length == 0)
+    if (this.exponent.length == 0)
       return new Polynomial(other.coefficient, other.exponent);
-    if (other.exponents.length == 0)
+    if (other.exponent.length == 0)
       return new Polynomial(this.coefficient, this.exponent);
     int max_exp = Math.max(this.exponent[this.exponent.length - 1],
                            other.exponent[other.exponent.length -1]);
@@ -76,9 +76,9 @@ public class Polynomial {
   }
 
   public Polynomial multiply(Polynomial other) {
-    if (this.exponents.length == 0)
+    if (this.exponent.length == 0)
       return new Polynomial(other.coefficient, other.exponent);
-    if (other.exponents.length == 0)
+    if (other.exponent.length == 0)
       return new Polynomial(this.coefficient, this.exponent);
     int max_exp = Math.max(this.exponent[this.exponent.length - 1],
             other.exponent[other.exponent.length -1]);
@@ -86,8 +86,8 @@ public class Polynomial {
     for (int i = 0; i < this.coefficient.length; i++)
       temp_coe[this.exponent[i]] = this.coefficient[i];
 
-    for (int i = 0; i < other.coefficients.length; i++) {
-      if (temp_coe[other.exponents[i]] == 0)
+    for (int i = 0; i < other.coefficient.length; i++) {
+      if (temp_coe[other.exponent[i]] == 0)
         temp_coe[other.exponent[i]] = other.coefficient[i];
       else
         temp_coe[other.exponent[i]] *= other.coefficient[i];

@@ -16,23 +16,24 @@ public class Driver {
        Polynomial p2 = new Polynomial(c2, e2);
 
        System.out.println("ADD");
-       Polynomial np = p1.add(p2);
-       for (int i = 0; i < np.coefficients.length; i++)
-           System.out.print(np.coefficients[i] + " ");
+       Polynomial np;
+	np = p1.add(p2);
+       for (int i = 0; i < np.coefficient.length; i++)
+           System.out.print(np.coefficient[i] + " ");
        System.out.println();
 
-        for (int i = 0; i < np.exponents.length; i++)
-            System.out.print(np.exponents[i] + " ");
+        for (int i = 0; i < np.exponent.length; i++)
+            System.out.print(np.exponent[i] + " ");
         System.out.println();
 
         System.out.println("MULTIPLY");
         np = p1.multiply(p2);
-        for (int i = 0; i < np.coefficients.length; i++)
-            System.out.print(np.coefficients[i] + " ");
+        for (int i = 0; i < np.coefficient.length; i++)
+            System.out.print(np.coefficient[i] + " ");
         System.out.println();
 
-        for (int i = 0; i < np.exponents.length; i++)
-            System.out.print(np.exponents[i] + " ");
+        for (int i = 0; i < np.exponent.length; i++)
+            System.out.print(np.exponent[i] + " ");
         System.out.println();
     }
 }
